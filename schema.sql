@@ -16,19 +16,21 @@ create table Buyers (
     budget decimal(10,2)
 );
 
-create table Properties (
-    property_id INT AUTO_INCREMENT primary key,
-    address varchar(200) NOT NULL,
-    city varchar(50),
-    state varchar(50),
-    zip_code varchar(10),
-    price DECIMAL(10,2),
-    bedrooms INT,
-    bathrooms INT,
-    sqft INT,
-    listing_date DATE,
-    agent_id INT,
-    foreign key (agent_id) REFERENCES Agents(agent_id)
+CREATE TABLE properties (
+  property_id INT NOT NULL AUTO_INCREMENT,
+  address VARCHAR(200) NOT NULL,
+  city VARCHAR(50),
+  state VARCHAR(50),
+  zip_code VARCHAR(10),
+  price DECIMAL(10,2),
+  bedrooms INT,
+  bathrooms INT,
+  sqft INT,
+  listing_date DATE,
+  agent_id INT,
+  image_url VARCHAR(255),
+  PRIMARY KEY (property_id),
+  KEY (agent_id)
 );
 
 create table Transactions (
@@ -41,4 +43,5 @@ create table Transactions (
     foreign key (property_id) REFERENCES Properties(property_id),
     foreign key (buyer_id) REFERENCES Buyers(buyer_id),
     foreign key (agent_id) REFERENCES Agents(agent_id)
+
 );
