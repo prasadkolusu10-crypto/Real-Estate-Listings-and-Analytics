@@ -9,7 +9,7 @@ app = Flask(__name__)
 db_config = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'Prasad@123', 
+    'password': 'ENTER YOUR PASSWORD', 
     'database': 'real_estate'
 }
 
@@ -174,3 +174,4 @@ def enquiry():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
